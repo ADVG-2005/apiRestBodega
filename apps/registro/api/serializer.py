@@ -4,4 +4,4 @@ from apps.registro.models import Materiales
 class RegistroSerializer(ModelSerializer):
     class Meta:
         model = Materiales
-        fields = ['nombre','categoria','cantidad','fechaIngreso']
+        fields = ['id','nombre','categoria','cantidad','fechaIngreso']
