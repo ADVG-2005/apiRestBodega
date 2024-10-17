@@ -8,7 +8,7 @@ from apps.registro.api.permissions import IsAdminOrReadOnly
 
 class ViewSetRegistro(ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
-    serializer_class= RegistroSerializer
+    serializer_classe= RegistroSerializer
     queryset = Materiales.objects.all()
     #http_method_names = ['GET','PUT']
 
