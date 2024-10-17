@@ -3,11 +3,15 @@ from rest_framework.viewsets import ModelViewSet
 #from rest_framework import status
 from apps.registro.models import Materiales
 from apps.registro.api.serializer import RegistroSerializer
-
+#from rest_framework.permissions import IsAuthenticated
+from apps.registro.api.permissions import IsAdminOrReadOnly
 
 class ViewSetRegistro(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]
     serializer_class= RegistroSerializer
-    queryset= Materiales.objects.all()
+    queryset = Materiales.objects.all()
+    #http_method_names = ['GET','PUT']
+
     #def list(self,request):
     #    serializer = RegistroSerializer(Materiales.objects.all(),many=True)
     #    return Response(status=status.HTTP_200_OK,data=serializer.data)
